@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+header nav {
+    margin-top: 36.1px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.logo{
+    display: inline;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+.menu{
+    margin-left: 122.4px;
+    display: inline;
+    position: absolute;
+    margin-top: 2px;
+}
+
+.menu a{
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.rectangle{
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    position: relative;
+    height: 366px;
+    width: 940px;
+    margin-bottom: 50px;
+}
+
+.welcome{
+    top: 117px;
+    left: 60px;
+    position: absolute;
+}
+
+.title h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.subtitle p{
+    opacity: 0.7;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    max-width: 316px;
+}
+
+.chef img{
+    bottom: 0;
+    right: 100px;
+    position: absolute;
+}
+
+.most_accessed_title h1{
+    font-size: 24px;
+    line-height: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #111111;
+}
+.recipes{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 20px;
+}
+.recipe_image img{
+    border-radius: 15px;
+    width: 300px;
+    height: 140px;
+}
+.recipe_title{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.recipe_title h1{
+    font-size: 18px;
+    line-height: 21px;
+    color: #111111;
+}
+
+.recipe_author p{
+    font-size: 14px;
+    line-height: 16px;
+    color: #777777;
+}
+
+.copyright{
+    margin-top: 50px;
+    background-color: #EEEEEE;
+    height: 62px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+}
+
+.copyright p{
+    margin-top: 23px;
+    margin-bottom: 23px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+    text-align: center;
+}
+
+.ab{
+    margin-top: 50px;
+}
+.about{
+    margin-bottom: 30px;
+}
+.about_title{
+    margin-bottom: 20px;
+}
+.about_title h1{
+    font-size: 20px;
+    line-height: 24px;
+    color: #111111;
+}
+#foodfy_title h1{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #111111;
+}
+.about_description{
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+#footer_about .copyright{
+    margin-top: 20px;
+}
