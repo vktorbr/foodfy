@@ -210,3 +210,75 @@ header nav {
     visibility: visible;
     opacity: 1;
 }
+
+.image_recipe{
+    width: 940px;
+    height: 280px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.image_recipe img{
+    border-radius: 15px;
+}
+.detail_title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.detail_title h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #111111;
+    margin-bottom: 4px;
+}
+
+.detail_title p{
+    font-size: 20px;
+    line-height: 24px;
+    color: #777777;
+}
+
+.detail_sub {
+    margin-bottom: 20px;
+    position: relative;
+    
+}
+
+.sub_title{
+    display: inline;
+    margin-right: 8px;
+}
+
+.sub_title h1{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    color: #111111;
+    display: inline;
+}
+
+.sub_button{
+    display: inline;
+}
+
+.sub_button a{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #999999;
+}
+
+.detail_description p{
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+.detail_description ul {
+    margin-left: 20px;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}

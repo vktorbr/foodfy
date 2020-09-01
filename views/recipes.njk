@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodfy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <header>
@@ -23,8 +23,8 @@
     <section class="most_accessed">        
         <div class="recipes">
         {% for i in range(2) %}
-            {% for recipe in recipes %}
-            <article class="recipe">
+            {% for index, recipe in recipes.entries() %}
+            <article class="recipe" id={{index}}>
                 <div class="recipe_image">
                     <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
                 </div>
@@ -39,29 +39,11 @@
         {% endfor %}
         </div>
     </section>
-
-    <div class="modal_overlay">
-        <div class="modal">
-            <div class="modal_image">
-                <img src="" alt="">
-            </div>
-            <div class="modal_info">
-                <div class="modal_title">
-                    <h1></h1>
-                </div>
-                <div class="modal_author">
-                    <p></p>
-                </div>
-            </div>
-            <a>Fechar modal</a>
-        </div>
-    </div>
-
     <footer>
         <div class="copyright">
             <p>Todos direitos reservados, receitas Foodfy.</p>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 </html>

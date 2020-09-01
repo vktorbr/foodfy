@@ -32,6 +32,13 @@ server.get('/recipes', function(req, res){
     return res.render('recipes', {recipes: data, images});
 })
 
+server.get('/recipes/:index', function(req, res){
+    const recipes = data;
+    const recipeIndex = req.params.index;
+    const recipe = recipes[recipeIndex];
+    return res.render('recipe_detail', {recipe, images});
+})
+
 server.listen(5002, function(){
     console.log('server is running');
 })
