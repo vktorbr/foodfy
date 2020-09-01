@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodfy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">
+                    <img src="{{images.logo}}" alt="Logo Foodfy">
+                </a>
+            </div>
+            <div class="menu">
+                <a href="/about">Sobre</a>
+                <a href="/recipes"><strong>Receitas</strong></a>
+            </div>
+        </nav>
+    </header>
+    <section class="most_accessed">        
+        <div class="recipes">
+        {% for i in range(2) %}
+            {% for recipe in recipes %}
+            <article class="recipe">
+                <div class="recipe_image">
+                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                </div>
+                <div class="recipe_title">
+                    <h1>{{recipe.title}}</h1>
+                </div>
+                <div class="recipe_author">
+                    <p>{{recipe.author}}</p>
+                </div>
+            </article>
+            {% endfor %}
+        {% endfor %}
+        </div>
+    </section>
+
+    <div class="modal_overlay">
+        <div class="modal">
+            <div class="modal_image">
+                <img src="" alt="">
+            </div>
+            <div class="modal_info">
+                <div class="modal_title">
+                    <h1></h1>
+                </div>
+                <div class="modal_author">
+                    <p></p>
+                </div>
+            </div>
+            <a>Fechar modal</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <p>Todos direitos reservados, receitas Foodfy.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
