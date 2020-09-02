@@ -261,6 +261,7 @@ header nav {
 
 .sub_button{
     display: inline;
+    cursor: pointer;
 }
 
 .sub_button a{
@@ -281,4 +282,10 @@ header nav {
     font-size: 18px;
     color: #444444;
     line-height: 28px;
+}
+
+.detail_description.active{
+    visibility: collapse;
+    opacity: 0;
+    height: 0;
 }
