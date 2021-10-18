@@ -20,6 +20,21 @@ for (const about of abouts) {
     })
 }
 
-modal.querySelector('.modal a').addEventListener('click', function(){
-    modal.classList.remove('active');
-})
+function addField(content){
+    const contents = document.querySelector(`#${content}s`);
+    const fieldContainer = document.querySelectorAll(`.${content}`);
+
+    //realiza um clone do último conteúdo adicionado
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    //não adiciona um novo input se o último tem um valor vazio
+    if(newField.children[0].value == '') return false;
+
+    //deixa o valor do input vazio
+    newField.children[0].value = '';
+    contents.appendChild(newField);
+}
+
+document.querySelector('.add-ingredient').addEventListener('click', addField.bind(null, 'ingredient'), false);
+
+document.querySelector('.add-step').addEventListener('click', addField.bind(null, 'step'), false);

@@ -1,0 +1,25 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<div id="table-container">
+    <div class="formHeader">
+        <h1>Gerenciar receitas</h1>
+        <a href="/admin/recipes/create">Nova receita</a>
+    </div>
+    
+    <div id="container-recipes">
+        {% for recipe in recipes %}
+        <div class="recipe-index">
+            <div class="recipe-index-image">
+                <img src="{{ recipe.image }}" alt="">
+            </div>
+            <div class="recipe-index-content">
+                <div class="recipe-index-title">{{ recipe.title }}</div>
+                <div class="recipe-index-author">por {{ recipe.author }}</div>
+                <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
