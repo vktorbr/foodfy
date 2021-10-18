@@ -1,7 +1,10 @@
 const express = require("express");
 const recipes = require("./controllers/recipes");
 const routes = express.Router();
+const data = require("./data.json");
 
+
+//admin
 routes.get("/admin/recipes", recipes.index);
 routes.get("/admin/recipes/create", recipes.create);
 routes.get("/admin/recipes/:id", recipes.show);

@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 
 const server = express();
 
-const data = require('./data');
+const data = require('./data.json');
 const images = {
   logo: '/images/logo.png',
   chef: '/images/chef.png',
@@ -26,22 +26,23 @@ nunjucks.configure('views', {
 });
 
 server.get('/', function (req, res) {
-  return res.render('home', { recipes: data, images });
+  return res.render('home', { recipes: data.recipes});
 });
 
 server.get('/about', function (req, res) {
-  return res.render('about', { images });
+  return res.render('about');
 });
 
 server.get('/recipes', function (req, res) {
-  return res.render('recipes', { recipes: data, images });
+  return res.render('recipes', { recipes: data.recipes });
 });
 
 server.get('/recipes/:index', function (req, res) {
-  const recipes = data;
+
+  const recipes = data.recipes;
   const recipeIndex = req.params.index;
   const recipe = recipes[recipeIndex];
-  return res.render('recipe_detail', { recipe, images });
+  return res.render('recipe_detail', { recipe });
 });
 
 server.listen(5000, function () {
