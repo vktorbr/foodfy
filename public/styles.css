@@ -220,6 +220,9 @@ header nav {
 
 .image_recipe img{
     border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .detail_title{
     text-align: center;
@@ -307,7 +310,24 @@ header nav {
 .headerAdmin > div{
     max-width: 940px;
     margin: 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
+
+.headerAdmin > div a:nth-child(2){
+    margin-left: 50px;
+    margin-right: 30px;
+}
+
+.headerAdmin > div a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #999999;
+    font-size: 15px;
+    line-height: 18px;
+}
+
 
 /*form*/
 form{
@@ -346,7 +366,6 @@ button[type='submit'],
     margin-bottom: 30px;
 }
 
-
 .item div:first-child,
 .item .ingredient,
 .item .step{
@@ -374,7 +393,8 @@ button[type='submit'],
 }
 
 .item div:nth-child(2) input, 
-.item div:nth-child(2) textarea{
+.item div:nth-child(2) textarea,
+.item div:nth-child(2) select{
     width: 100%;
     height: 49px;
     background: #FFFFFF;
@@ -384,6 +404,10 @@ button[type='submit'],
     padding: 0 16px;
     resize: none;
     box-sizing: border-box;
+}
+
+.item div:nth-child(2) select option{
+    font-size: 18px;
 }
 
 .item div:nth-child(2) textarea{
@@ -411,7 +435,7 @@ button[type='submit'],
 .form-delete button[type='submit']{
     background: #DC4747;
     position: absolute;
-    right: 149px;
+    right: 130px;
 }
 
 .form-edit button[type='submit']{
@@ -419,9 +443,13 @@ button[type='submit'],
     right: 0;
 }
 
+#delete-button-recipe{
+    right: 148px;
+}
+
 /* show */
 #detailsRecipe{
-    margin-top: 135px;
+    margin-top: 130px;
 }
 
 #detailsRecipeAdmin ul{
@@ -497,7 +525,8 @@ button[type='submit'],
     margin-bottom: 10px;
 }
 
-.recipe-index-content a{
+.recipe-index-content a,
+.chef-index-content a{
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -507,4 +536,78 @@ button[type='submit'],
 
 #table-container .formHeader a{
     text-decoration: none;
+}
+
+/* chef */
+.image_chef{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 30px;
+}
+
+.image_chef img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.chef_name,
+.chef_total{
+    text-align: center;
+}
+
+.chef_name{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #111111;
+    margin-bottom: 4px;
+}
+
+.chef_total{
+    color: #777777;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+#table-container-chef{
+    margin-top: 50px;
+}
+
+/* chef index*/
+#container-chefs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 10px;
+}
+
+.chef-index{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.chef-index-image{
+    width: 64px;
+    height: 64px;
+}
+
+.chef-index-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chef-index-name{
+    font-size: 18px;
+    line-height: 21px;
+    color: #111111;
+    margin-bottom: 10px;
 }

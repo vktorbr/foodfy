@@ -1,19 +1,24 @@
 <div class="item">
-    <div>Título da receita</div>
+    <div>Título</div>
     <div>
         <input type="text" name="title" value="{{ recipe.title }}">
-    </div>
-</div>
-<div class="item">
-    <div>Autor</div>
-    <div>
-        <input type="text" name="author" value="{{ recipe.author }}">
     </div>
 </div>
 <div class="item">
     <div>Imagem da receita</div>
     <div>
         <input type="url" name="image" value="{{ recipe.image }}">
+    </div>
+</div>
+<div class="item">
+    <div>Chef</div>
+    <div>
+        <select name="chef_id">
+            {% for chef in chefs %}
+            <option value="{{chef.id}}" {% if chef.id == recipe.chef_id %} selected
+            {% endif %}>{{chef.name}}</option>
+            {% endfor %}
+        </select>
     </div>
 </div>
 <div class="item">
@@ -30,9 +35,9 @@
 <div class="item">
     <div>Modo de preparo</div>
     <div id="steps">
-        {% for step in recipe.steps %}
+        {% for step in recipe.preparation %}
         <div class="step">
-            <input type="text" name="steps[]" value="{{ step }}">
+            <input type="text" name="preparation[]" value="{{ step }}">
         </div>
         {% endfor %}
     </div>
