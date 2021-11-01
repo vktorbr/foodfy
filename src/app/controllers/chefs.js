@@ -49,9 +49,14 @@ module.exports = {
         })
     },
     delete(req, res){
-        Chef.delete(req.body.id, function(){
-            return res.redirect("/admin/chefs");
+        Chef.find(req.body.id, function(chef){
+            if(chef.total == 0){
+                Chef.delete(req.body.id, function(){
+                    return res.redirect("/admin/chefs");
+                })
+            }else{
+                return res.send("Chefs que possuem receitas não podem ser deletados!");
+            }
         })
     },
-
 }

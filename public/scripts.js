@@ -1,3 +1,14 @@
+const currentPage = location.pathname;
+const menuLinks = document.querySelectorAll(".headerAdmin > div a");
+console.log(currentPage);
+
+for (const link of menuLinks) {
+    if(currentPage.includes(link.getAttribute("href"))){
+        link.classList.add("active");
+    }
+}
+
+
 const recipes = document.querySelectorAll('.recipe');
 for (const recipe of recipes) {
     recipe.addEventListener('click', function(){
@@ -35,6 +46,14 @@ function addField(content){
     contents.appendChild(newField);
 }
 
-document.querySelector('.add-ingredient').addEventListener('click', addField.bind(null, 'ingredient'), false);
+const addIngredient = document.querySelector(".add-ingredient");
 
-document.querySelector('.add-step').addEventListener('click', addField.bind(null, 'step'), false);
+if(addIngredient){
+    addIngredient.addEventListener('click', addField.bind(null, 'ingredient'), false);
+}
+
+const addStep = document.querySelector(".add-step");
+
+if(addStep){
+    addStep.addEventListener('click', addField.bind(null, 'step'), false);
+}

@@ -328,6 +328,10 @@ header nav {
     line-height: 18px;
 }
 
+.headerAdmin > div a.active{
+    color: #FFFFFF;
+}
+
 
 /*form*/
 form{
