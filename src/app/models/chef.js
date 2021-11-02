@@ -4,8 +4,10 @@ const { date } = require("../../lib/utils");
 module.exports = {
     all(callback){
         const query = `
-            SELECT *
+            SELECT chefs.*, COUNT(recipes) AS total 
             FROM chefs
+            LEFT JOIN recipes ON(chefs.id = recipes.chef_id)
+            GROUP BY chefs.id
         `;
 
         db.query(query, function(err, results){

@@ -1,68 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodfy</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="/">
-                    <img src="/images/logo.png" alt="Logo Foodfy">
-                </a>
-            </div>
-            <div class="menu">
-                <a href="/about">Sobre</a>
-                <a href="/recipes">Receitas</a>
-            </div>
-        </nav>
-    </header>
+{% extends "layoutClient.njk" %}
 
-    <section class="start">
-        <div class="rectangle">
-            <div class="welcome">
-                <div class="title">
-                    <h1>As melhores receitas</h1>
-                </div>
-                <div class="subtitle">
-                    <p>Aprenda a construir os melhores pratos
-                        com receitas criadas por profissionais
-                        do mundo inteiro.</p>
-                </div>
+{% block content %}
+<section class="start">
+    <div class="rectangle">
+        <div class="welcome">
+            <div class="title">
+                <h1>As melhores receitas</h1>
             </div>
-            <div class="chef">
-                <img src="/images/chef.png" alt="Desenho de um Chef">
+            <div class="subtitle">
+                <p>Aprenda a construir os melhores pratos
+                    com receitas criadas por profissionais
+                    do mundo inteiro.</p>
             </div>
         </div>
-    </section>
+        <div class="chef">
+            <img src="/images/chef.png" alt="Desenho de um Chef">
+        </div>
+    </div>
+</section>
 
-    <section class="most_accessed">
-        <div class="most_accessed_title">
-            <h1>Mais acessadas</h1>
-        </div>
-        <div class="recipes">
-            {% for recipe in recipes %}
-            <article class="recipe">
-                <div class="recipe_image">
-                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
-                </div>
-                <div class="recipe_title">
-                    <h1>{{recipe.title}}</h1>
-                </div>
-                <div class="recipe_author">
-                    <p>{{recipe.author}}</p>
-                </div>
-            </article>
-            {% endfor %}            
-        </div>
-    </section>
-    <footer>
-        <div class="copyright">
-            <p>Todos direitos reservados, receitas Foodfy.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<section class="most_accessed">
+    <div class="most_accessed_title">
+        <h1>Mais acessadas</h1>
+    </div>
+    <div class="recipes">
+        {% for recipe in recipes %}
+        <article class="recipe">
+            <div class="recipe_image">
+                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+            </div>
+            <div class="recipe_title">
+                <h1>{{recipe.title}}</h1>
+            </div>
+            <div class="recipe_author">
+                <p>por {{recipe.chef_name}}</p>
+            </div>
+        </article>
+        {% endfor %}            
+    </div>
+</section>
+<footer>
+    <div class="copyright">
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+    </div>
+</footer>
+{% endblock content %}
+    

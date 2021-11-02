@@ -1,6 +1,12 @@
 const currentPage = location.pathname;
-const menuLinks = document.querySelectorAll(".headerAdmin > div a");
-console.log(currentPage);
+
+let menuLinks;
+
+if(currentPage.includes("admin")){
+    menuLinks = document.querySelectorAll(".headerAdmin > div a");
+}else{
+    menuLinks = document.querySelectorAll(".menu > a");
+}
 
 for (const link of menuLinks) {
     if(currentPage.includes(link.getAttribute("href"))){

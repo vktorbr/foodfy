@@ -8,13 +8,16 @@
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 940px;
 }
 
 header nav {
     margin-top: 36.1px;
     position: relative;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
@@ -25,19 +28,39 @@ header nav {
     text-decoration: none;
 }
 
-.menu{
-    margin-left: 122.4px;
-    display: inline;
-    position: absolute;
-    margin-top: 2px;
-}
-
 .menu a{
     font-size: 16px;
     line-height: 19px;
     color: #111111;
     margin-right: 30px;
     text-decoration: none;
+}
+
+.menu a.active{
+    font-weight: bold;
+    
+}
+
+.menu a:last-child{
+    margin-right: 0;
+}
+
+.searchRecipes{
+    display: grid;
+    grid-template-columns: 246px 1fr;
+    column-gap: 8px;
+    padding: 0;
+}
+
+.searchRecipes > input{
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    padding: 11px 15px;
+    outline: none;
+    color: #999999;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 16px;
 }
 
 .rectangle{
@@ -95,6 +118,7 @@ header nav {
     border-radius: 15px;
     width: 300px;
     height: 140px;
+    object-fit: cover;
 }
 .recipe_title{
     margin-top: 20px;
@@ -104,6 +128,7 @@ header nav {
     font-size: 18px;
     line-height: 21px;
     color: #111111;
+    font-weight: normal;
 }
 
 .recipe_author p{
@@ -614,4 +639,10 @@ button[type='submit'],
     line-height: 21px;
     color: #111111;
     margin-bottom: 10px;
+}
+
+.chef-index-total{
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
 }

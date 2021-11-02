@@ -3,8 +3,12 @@ const recipes = require("./app/controllers/recipes");
 const chefs = require("./app/controllers/chefs");
 const routes = express.Router();
 
-//admin recipes
+//user
+routes.get("/", recipes.home);
+routes.get("/about", recipes.about);
+routes.get("/chefs", chefs.indexClient);
 
+//admin recipes
 routes.get("/admin/recipes", recipes.index);
 routes.get("/admin/recipes/create", recipes.create);
 routes.get("/admin/recipes/:id", recipes.show);

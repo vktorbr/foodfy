@@ -55,21 +55,13 @@ module.exports = {
         Recipe.delete(req.body.id, function(){
             return res.redirect(`/admin/recipes`);
         })
+    },
+    home(req, res){
+        Recipe.all(function(recipes){
+            return res.render("home", { recipes });
+        })
+    },
+    about(req, res){
+        return res.render("about");
     }
 }
-    /*
-    const ingredients = req.body.ingredients.filter(function(ingredient){
-        return ingredient != '';
-    })
-
-    const steps = req.body.steps.filter(function(step){
-        return step != '';
-    })
-
-    const recipe = {
-        id,
-        ...req.body,
-        ingredients,
-        steps
-    }*/
-

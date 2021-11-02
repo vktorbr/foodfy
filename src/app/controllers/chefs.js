@@ -59,4 +59,9 @@ module.exports = {
             }
         })
     },
+    indexClient(req, res){
+        Chef.all(function(chefs){
+            return res.render("chefs", { chefs });
+        })
+    }
 }
