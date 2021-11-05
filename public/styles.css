@@ -649,3 +649,26 @@ button[type='submit'],
     line-height: 16px;
     color: #666666;
 }
+
+/*pagination*/
+.most_accessed{
+    display: grid;
+    grid-template: 32px 1fr 16px / 1fr;
+}
+
+.pagination{
+    justify-self: center;
+    margin-top: 64px;
+}
+
+.pagination a,
+.pagination span{
+    color: #6558C3;
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover{
+    filter: brightness(0.3);
+    border-bottom: 1px solid #6558C3;
+}

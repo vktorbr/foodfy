@@ -119,7 +119,23 @@ module.exports = {
 
             callback(results.rows);
         })        
+    },
+    paginate(params){
+        const { limit, offset, callback } = params;
+
+        let query = "";
+        
+
+        query = `
+            SELECT recipes.*
+            FROM recipes
+            LIMIT $1 OFFSET $2
+        `;
+
+        db.query(query, [ limit, offset ], function(err, results){
+            if(err) throw `Database Error! ${err}`;
+
+            callback(results.rows);
+        })
     }
-
-
 }
