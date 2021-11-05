@@ -63,5 +63,24 @@ module.exports = {
     },
     about(req, res){
         return res.render("about");
+    },
+    search(req, res){
+        const { filter } = req.query;
+
+        Recipe.findBy(filter, function(recipes){
+            return res.render("searchRecipes", { recipes, filter });
+        })
+    },
+    list(req, res){
+        Recipe.all(function(recipes){
+            return res.render("recipes", { recipes });
+        })
+    },
+    details(req, res){
+        Recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send("Recipe not found!");
+            
+            return res.render('recipe_detail', { recipe });
+        })
     }
 }

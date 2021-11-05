@@ -7,6 +7,9 @@ const routes = express.Router();
 routes.get("/", recipes.home);
 routes.get("/about", recipes.about);
 routes.get("/chefs", chefs.indexClient);
+routes.get("/recipes", recipes.list);
+routes.get("/searchRecipes", recipes.search);
+routes.get("/recipes/:id", recipes.details);
 
 //admin recipes
 routes.get("/admin/recipes", recipes.index);

@@ -13,8 +13,7 @@ body{
 
 header nav {
     margin-top: 36.1px;
-    position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +37,6 @@ header nav {
 
 .menu a.active{
     font-weight: bold;
-    
 }
 
 .menu a:last-child{
@@ -114,6 +112,11 @@ header nav {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px 20px;
 }
+
+.recipe_link{
+    text-decoration: none;
+}
+
 .recipe_image img{
     border-radius: 15px;
     width: 300px;

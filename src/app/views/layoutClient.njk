@@ -20,13 +20,13 @@
                 <a href="/chefs">Chefs</a>
             </div>
             <form class="searchRecipes" action="/searchRecipes" method="get">
-                <input type="text" name="" value="" placeholder="Buscar uma receita">
+                <input type="text" name="filter" value="{{filter}}" placeholder="Buscar uma receita">
                 <button type="submit">Buscar</button>
             </form>
         </nav>
     </header>
     {% block content %}
     {% endblock content %}
-    <script src="scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 </html>

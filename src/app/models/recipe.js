@@ -53,10 +53,24 @@ module.exports = {
             WHERE recipes.id = $1
         `;
 
-        db.query(query, [ id ], function(err, results){
+        db.query(query, [id], function(err, results){
             if(err) throw `Database Error! ${err}`;
 
             callback(results.rows[0]);
+        })
+    },
+    findBy(filter, callback){
+        const query = `
+            SELECT recipes.*, chefs.name AS chef_name
+            FROM recipes
+            LEFT JOIN chefs ON(recipes.chef_id = chefs.id)
+            WHERE recipes.title ILIKE '%${filter}%'
+        `;
+
+        db.query(query, function(err, results){
+            if(err) throw `Database Error! ${err}`;
+
+            callback(results.rows);
         })
     },
     update(data, callback){
